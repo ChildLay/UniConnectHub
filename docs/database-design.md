@@ -1,0 +1,3 @@
+# Database design
+
+SQL Server is configured in Infrastructure. EF Core entity mappings are isolated in `IEntityTypeConfiguration<T>` classes. Unique indexes cover normalized university, user email, skill, interest, and one-time token identifiers. Relationship tables use composite primary keys. Foreign-key deletes are restrictive for user-generated history, cascading only for dependent records such as profile or post comments/reactions. `dotnet ef migrations add InitialCreate --project src/UniConnect.Infrastructure --startup-project src/UniConnect.Api` creates the initial migration after installing the EF CLI. No migration is committed yet because `dotnet-ef` is not installed in this environment.

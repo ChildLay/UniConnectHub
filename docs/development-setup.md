@@ -1,0 +1,5 @@
+# Development setup
+
+Install the .NET 9 SDK. .NET 10 runtime is present, but SDK 10 is not installed, so projects target `net9.0`. Install and start SQL Server locally with the same instance name used in `ConnectionStrings:DefaultConnection`. Development defaults to `Server=localhost`, Windows integrated authentication, and the `UniConnectHub` database. On API startup in Development, EF Core creates the database and schema if they do not exist, then inserts repeatable demo data. If SSMS connects to a named instance, update the connection string to that exact server value (for example, `localhost\SQLEXPRESS`). Configure a 32+ byte `Jwt:SigningKey` with user secrets or environment variables. Run `dotnet restore UniConnectHub.sln`, `dotnet build UniConnectHub.sln`, `dotnet test UniConnectHub.sln`, and `dotnet run --project src/UniConnect.Api`.
+
+The seeded demo accounts are `admin@demo.uniconnecthub.local`, `student@demo.uniconnecthub.local`, and `alumni@demo.uniconnecthub.local`. All use the development-only password `DemoPass123!`; all are email verified. The admin account has the `Admin` role. Do not use these accounts outside local development.

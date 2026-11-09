@@ -1,0 +1,23 @@
+# Build outputs
+**/bin/
+**/obj/
+**/artifacts/
+.vs/
+.idea/
+
+# Local SDK state
+.dotnet-home/
+**/Properties/ServiceDependencies/
+
+# User-specific files and secrets
+*.user
+*.suo
+secrets.json
+appsettings.*.local.json
+
+# Test and coverage outputs
+TestResults/
+coverage/
+
+# Uploaded local profile media
+src/UniConnect.Api/App_Data/profile-media/
